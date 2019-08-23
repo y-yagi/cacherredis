@@ -36,6 +36,7 @@ func (rs *RedisStore) Write(key string, value []byte, d time.Duration) error {
 	return err
 }
 
+// Delete delete cache.
 func (rs *RedisStore) Delete(key string) error {
 	_, err := rs.client.Del(key).Result()
 	return err
