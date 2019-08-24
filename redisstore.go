@@ -41,3 +41,9 @@ func (rs *RedisStore) Delete(key string) error {
 	_, err := rs.client.Del(key).Result()
 	return err
 }
+
+// Cleanup clear expired cache.
+func (rs *RedisStore) Cleanup() error {
+	// Redis clear expired cache.  So do not need to this in `RedisStore`.
+	return nil
+}
