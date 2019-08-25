@@ -47,3 +47,9 @@ func (rs *RedisStore) Cleanup() error {
 	// Redis clear expired cache.  So do not need to this in `RedisStore`.
 	return nil
 }
+
+// Exist check the cache exists or not.
+func (rs *RedisStore) Exist(key string) bool {
+	result, _ := rs.client.Exists(key).Result()
+	return result != 0
+}
