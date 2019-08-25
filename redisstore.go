@@ -7,7 +7,7 @@ import (
 	"github.com/y-yagi/cacher"
 )
 
-// WithRedisStore create a new Cache with Redis store.
+// WithRedisStore create a new Cacher with a Reids store.
 func WithRedisStore(opt *redis.Options) *cacher.Cacher {
 	cache := &cacher.Cacher{}
 	client := redis.NewClient(opt)
@@ -20,7 +20,7 @@ type RedisStore struct {
 	client *redis.Client
 }
 
-// Read cache.
+// Read reads cache from a Redis store.
 func (rs *RedisStore) Read(key string) ([]byte, error) {
 	value, err := rs.client.Get(key).Result()
 	if err != nil {
@@ -30,19 +30,19 @@ func (rs *RedisStore) Read(key string) ([]byte, error) {
 	return []byte(value), nil
 }
 
-// Write create a new cache.
+// Write stores data to a Redis store.
 func (rs *RedisStore) Write(key string, value []byte, d time.Duration) error {
 	err := rs.client.Set(key, string(value), d).Err()
 	return err
 }
 
-// Delete delete cache.
+// Delete deletes data from a Redis store.
 func (rs *RedisStore) Delete(key string) error {
 	_, err := rs.client.Del(key).Result()
 	return err
 }
 
-// Cleanup clear expired cache.
+// Cleanup deletes the expired cache.
 func (rs *RedisStore) Cleanup() error {
 	// Redis clear expired cache.  So do not need to this in `RedisStore`.
 	return nil
