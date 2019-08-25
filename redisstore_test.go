@@ -44,6 +44,19 @@ func TestReidsStoreWithExpired(t *testing.T) {
 	}
 }
 
+func TestFileStore_Exist(t *testing.T) {
+	c := WithRedisStore(redisOpt())
+
+	if c.Exist("not-exist") {
+		t.Fatalf("want false, got true")
+	}
+
+	c.Write("exist", []byte("foo"), cacher.Forever)
+	if !c.Exist("exist") {
+		t.Fatalf("want true, got false")
+	}
+}
+
 func redisOpt() *redis.Options {
 	return &redis.Options{
 		Addr:     "localhost:6379",
