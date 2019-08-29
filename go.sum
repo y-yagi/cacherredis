@@ -8,5 +8,7 @@ github.com/y-yagi/cacher v0.1.0 h1:WY69R9jcEvufBXcNVFA4irJp74bCswbnB4ui6n7QI20=
 github.com/y-yagi/cacher v0.1.0/go.mod h1:0IpzAvQ5UKfxQD4bCFvPKyoyu6/oBWhh5b6NFCNQBjE=
 github.com/y-yagi/cacher v0.1.1-0.20190825223318-5e07f9f0e1e5 h1:nIWfd8OBdQlGN7gEPIEBwA5tcjBtyeLxhX5cskBzWJQ=
 github.com/y-yagi/cacher v0.1.1-0.20190825223318-5e07f9f0e1e5/go.mod h1:0IpzAvQ5UKfxQD4bCFvPKyoyu6/oBWhh5b6NFCNQBjE=
+github.com/y-yagi/cacher v0.2.0 h1:QqmjX5WlFDPv3Vte7VeiYIeON3KxiUR4dk905vrQY68=
+github.com/y-yagi/cacher v0.2.0/go.mod h1:0IpzAvQ5UKfxQD4bCFvPKyoyu6/oBWhh5b6NFCNQBjE=
 github.com/y-yagi/goext v0.2.0 h1:6UXc9WyuZFNz1mar/ezzmdvObzKRqk3I7tAA+6AcS78=
 github.com/y-yagi/goext v0.2.0/go.mod h1:ny3voMiQkmfJ+v/ojY5N9aqzMC1Id3If0BtoVKA9AwQ=
